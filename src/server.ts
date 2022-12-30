@@ -23,7 +23,7 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
       res.status(400).send("url for image was not found or is not valid");
     }
 
-    const localImagePath = await filterImageFromURL(imageUrl);
+    const localImagePath = await filterImageFromURL(imageUrl as string);
 
     res.status(200).sendFile(localImagePath, function (err) {
       if (err) {
